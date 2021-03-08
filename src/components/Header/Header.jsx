@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar variant="dense">
           <Nav />
         </Toolbar>

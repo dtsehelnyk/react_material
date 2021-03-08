@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
+import {
+  Typography,
+} from '@material-ui/core'
+
 const useStyle = makeStyles(theme => ({
-  time: {
-    color: 'red',
+  timer: {
+    fontWeight: 700,
+    fontSize: '48px',
+    color: 'green',
+    textShadow: '0 0 7px rgba(50, 255, 50, 0.7)',
   },
 }))
 
@@ -14,7 +21,6 @@ export const Timer = () => {
   useEffect(() => {
     const showTime = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
-      console.log(time);
     }, 1000);
 
     return () => {
@@ -23,8 +29,8 @@ export const Timer = () => {
   });
 
   return (
-    <div>
+    <Typography className={classes.timer} align="center">
       {time}
-    </div>
+    </Typography>
   )
 }
